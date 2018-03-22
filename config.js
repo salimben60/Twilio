@@ -4,7 +4,7 @@ var cfg = {};
 if (process.env.NODE_ENV !== 'production' && process.env.NODE_ENV !== 'test') {
   dotenv.config({path: '.env'});
 } else {
-  dotenv.config({path: '.env.example', silent: true});
+  dotenv.config({path: '.env', silent: true});
 }
 
 // HTTP Port to run our web application

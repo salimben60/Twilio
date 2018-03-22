@@ -51,7 +51,12 @@ if (process.env.NODE_ENV !== 'test') {
 routes(router);
 app.use(router);
 
-// Handle 404
+// Handle 200
+app.use(function(request, response, next) {
+    response.status(200);
+    response.sendFile(path.join(__dirname, 'public', '200.html'));
+});
+
 app.use(function(request, response, next) {
   response.status(404);
   response.sendFile(path.join(__dirname, 'public', '404.html'));

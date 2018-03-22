@@ -24,9 +24,9 @@ describe('Twilio notifications on error', function() {
       return {
         api: {
           messages: {
-            create: msgCreateStub,
-          },
-        },
+            create: msgCreateStub
+          }
+        }
       }
     }
 
