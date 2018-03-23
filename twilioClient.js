@@ -7,7 +7,7 @@ module.exports.sendSms = function(to, message) {
     .create({
       body: message,
       to: to,
-      from: config.sendingNumber,
+      from: config.sendingNumber
     }).then(function(data) {
       console.log('Administrator notified');
     }).catch(function(err) {

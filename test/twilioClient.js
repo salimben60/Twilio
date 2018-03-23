@@ -18,9 +18,9 @@ describe('twilioClient', function(){
       return {
         api: {
           messages: {
-            create: msgCreateStub,
-          },
-        },
+            create: msgCreateStub
+          }
+        }
       }
     }
 

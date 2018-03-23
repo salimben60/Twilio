@@ -38,7 +38,29 @@ describe('Twilio notifications on error', function() {
     mockery.disable();
   });
 
-  describe('GET /error', function() {
+      describe('GET /error', function() {
+      it('should return an error', function() {
+        return agent
+          .get('/error')
+          .expect(function(res) {
+            expect(res.status).to.equal(500);
+            expect(msgCreateStub.calledTwice).to.be.true;
+          });
+        });
+    });
+
+    describe('GET /page2', function() {
+        it('should return an error', function() {
+            return agent
+                .get('/page2')
+                .expect(function(res) {
+                    expect(res.status).to.equal(200);
+                    expect(msgCreateStub.calledTwice).to.be.true;
+                });
+        });
+    });
+
+/*  describe('GET /error', function() {
     it('should return an error', function() {
       return agent
         .get('/error')
@@ -47,5 +69,5 @@ describe('Twilio notifications on error', function() {
           expect(msgCreateStub.calledTwice).to.be.true;
         });
       });
-  });
+  });*/
 });
